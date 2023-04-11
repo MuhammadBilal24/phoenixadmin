@@ -41,17 +41,16 @@ class homeController extends Controller
         return view('lectures',['Lecture_data'=>$Lecture_data]);
     }
 
-    // Users
-    public function users()
+
+    public function student()
     {
         $Users_data=DB::table('users')
         ->join('students', 'students.id_user', '=', 'users.id_user')
         ->get();
-        // return $Users_data;
-        return view('users',['Users_data'=>$Users_data]);
+        return view('students',['Users_data'=>$Users_data]);
     }
 
-    // Add Users
+    // Add Student
     public function AddUser(request $request){
         $arr=[
             'email_user'=>$request->email_user,
@@ -60,7 +59,7 @@ class homeController extends Controller
             'status'=>$request->status,
         ];
             DB::table('users')->insert($arr);
-            return redirect('/users');
+            return redirect('/students');
     }
 
     // Edit User
@@ -72,7 +71,7 @@ class homeController extends Controller
             'status'=>$request->status,
         ];
             DB::table('users')->where(['id_user'=>$request->id_user])->update($arr);
-        return redirect('/users');
+        return redirect('/students');
     }
 
 
@@ -81,10 +80,7 @@ class homeController extends Controller
     {
         return view('facilitator');
     }
-    public function student()
-    {
-        return view('students');
-    }
+
     public function admin()
     {
         return view('admin');

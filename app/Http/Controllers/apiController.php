@@ -18,14 +18,17 @@ class apiController extends Controller
         $data = DB::table('courses')->where(['id_course'=>$request->courseID])->delete();
         return $data;
     }
-    // user get
-    public function userget(request $request){
-        $data = DB::table('users')->where(['id_user'=>$request->userID])->get();
+    // student get
+    public function studentget(request $request){
+        $data = DB::table('users')
+        ->join('students', 'students.id_user', '=', 'users.id_user')
+        ->where(['users.id_user'=>$request->studentID])
+        ->get();
         return $data;
     }
-    // Delete user
-    public function userdelete(request $request){
-        $data = DB::table('users')->where(['id_user'=>$request->userID])->delete();
+    // Delete student
+    public function studentdelete(request $request){
+        $data = DB::table('users')->where(['id_user'=>$request->studentID])->delete();
         return $data;
     }
 }

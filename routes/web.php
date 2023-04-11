@@ -27,7 +27,7 @@ Route::get('/', function () {
 Route::get('/login', [loginController::class, 'index']);
 
 // Students
-Route::get('/users', [homeController::class, 'users']);
+Route::get('/students', [homeController::class, 'student']);
 Route::post('/add/users',[homeController::class,'AddUser']);
 Route::post('/edit/users',[homeController::class,'EditUser']);
 
@@ -41,7 +41,7 @@ Route::get('/courses/lectures/{courseID}',[homeController::class,'courselecture'
 
 
 Route::get('/facilitator', [homeController::class, 'facilitator']);
-Route::get('/students', [homeController::class, 'student']);
+
 Route::get('/admin', [homeController::class, 'admin']);
 
 
@@ -60,6 +60,6 @@ Route::get('/api/Courseget/{courseID}',[apiController::class,'courseget']);
 Route::get('/api/Coursedelete/{courseID}',[apiController::class,'coursedelete']);
 
 // Student
-Route::get('/api/Usersget/{userID}',[apiController::class,'userget']);
-Route::get('/api/Userdelete/{userID}',[apiController::class,'userdelete']);
+Route::get('/api/Studentget/{studentID}',[apiController::class,'studentget']);
+Route::get('/api/Studentdelete/{studentID}',[apiController::class,'studentdelete']);
 

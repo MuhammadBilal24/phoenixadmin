@@ -134,7 +134,6 @@
                 <a href="#" class="menu-toggle nav-link has-dropdown" style="color: black"><i
                     data-feather="users" style="color: #800000;"></i><span style="color: black">Accounts</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="/users">Users</a></li>
                   <li><a class="nav-link" href="/facilitator">Facilitators</a></li>
                   <li><a class="nav-link" href="/students">Students</a></li>
                   <li><a class="nav-link" href="/admin">Admins</a></li>
