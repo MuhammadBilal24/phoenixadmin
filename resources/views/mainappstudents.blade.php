@@ -6,10 +6,10 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h4>All Students</h4>
-                    {{-- <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-target="#exampleModal">
+                <h4>Main App Students</h4>
+                    <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-target="#exampleModal">
                         Add
-                    </button> --}}
+                    </button>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -17,29 +17,18 @@
                     <thead>
                       <tr>
                         <th>ID</th>
-                        <th>User ID</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Invited</th>
-                        <th>Wallet Code</th>
                         <th>Status</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
-                     @foreach ($Users_data as $value )
+                     @foreach ($Users_data as $value)
                         <tr>
-                            <td>{{$value->id_student}}</td>
                             <td>{{$value->id_user}}</td>
                             <td>{{$value->name_user}}</td>
                             <td>{{$value->email_user}}</td>
-                            <td> @if ($value->is_invited == '1')
-                                     <span class="badge badge-secondary">Invited</span>
-                                 @else
-                                     {{-- <span class="badge badge-secondary">UnInvited</span> --}}
-                                 @endif
-                            </td>
-                            <td><span class="btn btn-light">Wc: {{$value->wallet_code}}</span></td>
                             <td> @if ($value->status == '1')
                                     <span class="badge badge-success">Active</span>
                                 @else
@@ -73,7 +62,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="/add/allstudent" method="post" class="" id="saved">
+        <form action="/add/appstudent" method="post" class="" id="saved">
             @csrf
             <div class="modal-body">
                 <label for="name_user">User Name</label>
@@ -107,22 +96,14 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="/edit/allstudent" method="post" class="" id="getForm">
+        <form action="/edit/appstudent" method="post" class="" id="getForm">
             @csrf
             <div class="modal-body">
                 <input type="hidden" class="form-control" name="id_user" id="get_id_user">
-                <input type="hidden" class="form-control" name="id_student" id="get_id_student">
                 <label for="name_user">User Name</label>
                 <input type="text" class="form-control" name="name_user" id="get_name_user">
                 <label for="email_user">Email</label>
                 <input type="text" class="form-control" name="email_user" id="get_email_user">
-                <label for="is_invited">Invited</label>
-                <select class="form-control" name="is_invited" id="get_is_invited">
-                    <option value="1">Invited</option>
-                    <option value="0">UnInvited</option>
-                </select>
-                <label for="wallet_code">Wallet Code</label>
-                <input type="text" class="form-control" name="wallet_code" id="get_wallet_code">
                 <label for="status">Status</label>
                 <select type="text" class="form-control" name="status" id="get_status">
                     <option value="1">Active</option>
@@ -165,11 +146,8 @@
             res = res[0];
 
             document.getElementById('get_id_user').value = res.id_user;
-            document.getElementById('get_id_student').value = res.id_student;
             document.getElementById('get_name_user').value = res.name_user;
             document.getElementById('get_email_user').value = res.email_user;
-            document.getElementById('get_is_invited').value = res.is_invited;
-            document.getElementById('get_wallet_code').value = res.wallet_code;
             document.getElementById('get_status').value = res.status;
           }
         };
@@ -203,7 +181,7 @@
                     console.log(res);
                     if(res == 1){
                       //-----------
-                      swal("User account deleted!", {
+                      swal("App Student account deleted!", {
                       title:'Deleted',
                       icon: "success",
                       timer:1000

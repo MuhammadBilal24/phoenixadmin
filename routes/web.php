@@ -28,8 +28,20 @@ Route::get('/login', [loginController::class, 'index']);
 
 // Students
 Route::get('/students', [homeController::class, 'student']);
-Route::post('/add/users',[homeController::class,'AddUser']);
-Route::post('/edit/users',[homeController::class,'EditUser']);
+Route::post('/add/allstudent',[homeController::class,'AddUser']);
+Route::post('/edit/allstudent',[homeController::class,'EditUser']);
+
+// Invited Students
+Route::get('/invitedstudents', [homeController::class, 'invitedstudent']);
+Route::post('/add/invitedstudent',[homeController::class,'AddinvitedStudent']);
+Route::post('/edit/invitedstudent',[homeController::class,'EditinvitedStudent']);
+
+
+// Main App Students
+Route::get('/mainappstudents', [homeController::class, 'mainappstudent']);
+Route::post('/add/appstudent',[homeController::class,'AddappStudent']);
+Route::post('/edit/appstudent',[homeController::class,'EditappStudent']);
+
 
 //Courses
 Route::get('/courses', [homeController::class, 'course']);
@@ -59,7 +71,9 @@ Route::get('/admin', [homeController::class, 'admin']);
 Route::get('/api/Courseget/{courseID}',[apiController::class,'courseget']);
 Route::get('/api/Coursedelete/{courseID}',[apiController::class,'coursedelete']);
 
-// Student
+// All Student
 Route::get('/api/Studentget/{studentID}',[apiController::class,'studentget']);
 Route::get('/api/Studentdelete/{studentID}',[apiController::class,'studentdelete']);
 
+
+// Route::get('/api/Studentget/{studentID}',[apiController::class,'mainappstudentget']);

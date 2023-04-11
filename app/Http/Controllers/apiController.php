@@ -31,4 +31,11 @@ class apiController extends Controller
         $data = DB::table('users')->where(['id_user'=>$request->studentID])->delete();
         return $data;
     }
+    // MainApp Student get
+    public function mainappstudentget(request $request){
+        $data = DB::table('users')
+        ->where(['users.id_user'=>$request->studentID])
+        ->get();
+        return $data;
+    }
 }

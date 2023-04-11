@@ -135,8 +135,16 @@
                     data-feather="users" style="color: #800000;"></i><span style="color: black">Accounts</span></a>
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="/facilitator">Facilitators</a></li>
-                  <li><a class="nav-link" href="/students">Students</a></li>
                   <li><a class="nav-link" href="/admin">Admins</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="menu-toggle nav-link has-dropdown" style="color: black"><i
+                    data-feather="users" style="color: #800000;"></i><span style="color: black">Student Accounts</span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="nav-link" href="/students">All Students</a></li>
+                  <li><a class="nav-link" href="/invitedstudents">Invited Students</a></li>
+                  <li><a class="nav-link" href="/mainappstudents">Main App Students</a></li>
                 </ul>
               </li>
               <li>
