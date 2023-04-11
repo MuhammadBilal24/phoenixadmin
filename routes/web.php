@@ -55,10 +55,11 @@ Route::get('/admin', [homeController::class, 'admin']);
 
 // ----------------------------------------------    API SECTION ----------------------------------------------------------------
 
+// Course
 Route::get('/api/Courseget/{courseID}',[apiController::class,'courseget']);
 Route::get('/api/Coursedelete/{courseID}',[apiController::class,'coursedelete']);
 
-
+// Student
 Route::get('/api/Usersget/{userID}',[apiController::class,'userget']);
 Route::get('/api/Userdelete/{userID}',[apiController::class,'userdelete']);
 
