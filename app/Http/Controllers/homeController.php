@@ -131,8 +131,8 @@ class homeController extends Controller
         ->get();
         // return $Users_data;
         return view('mainappstudents',['Users_data'=>$Users_data]);
-        }
-     // Add mainapp Student
+    }
+    // Add mainapp Student
      public function AddappStudent(request $request){
         $arr1=[
             'email_user'=>$request->email_user,
@@ -155,13 +155,56 @@ class homeController extends Controller
         return redirect('/mainappstudents');
     }
 
+    // Facilitator
     public function facilitator()
     {
-        return view('facilitator');
+        $Users_data=DB::table('facilitators')
+        ->join('users', 'users.id_user', '=', 'facilitators.id_user')
+        ->get();
+        // return $Users_data;
+        return view('facilitator',['Users_data'=>$Users_data]);
+    }
+    // Add facilitator Student
+    public function Addfacilitator(request $request){
+        $arr1=[
+            'email_user'=>$request->email_user,
+            'pass_user'=>$request->pass_user,
+            'name_user'=>$request->name_user,
+            'status'=>$request->status,
+        ];
+            DB::table('users')->insert($arr1);
+            return redirect('/facilitator');
+    }
+    // Edit facilitator Studnet
+    public function Editfacilitator(request $request){
+        $arr1=[
+            'id_user'=>$request->id_user,
+            'email_user'=>$request->email_user,
+            'name_user'=>$request->name_user,
+            'status'=>$request->status,
+        ];
+            DB::table('users')->where(['id_user'=>$request->id_user])->update($arr1);
+        return redirect('/facilitator');
+    }
+    // facilitator courses
+    public function facilitatorcourses(request $request)
+    {
+        $Lecture_data=DB::table('lectures')->where(['id_course'=>$request->faciliatatorID])->get();
+        return view('facilitatorcourses',['Lecture_data'=>$Lecture_data]);
     }
 
     public function admin()
     {
         return view('admin');
+    }
+
+    // notification
+    public function notification()
+    {
+        // $Users_data=DB::table('facilitators')
+        // ->join('users', 'users.id_user', '=', 'facilitators.id_user')
+        // ->get();
+        // return $Users_data;
+        return view('notification');
     }
 }

@@ -38,4 +38,19 @@ class apiController extends Controller
         ->get();
         return $data;
     }
+    // Facilitator get
+     public function facilitatorget(request $request){
+        $data = DB::table('users')
+        ->join('facilitators', 'facilitators.id_user', '=', 'users.id_user')
+        ->where(['users.id_user'=>$request->facilitatorID])
+        ->get();
+        return $data;
+    }
+    // Facilitator Delete
+    public function facilitatordelete(request $request){
+        $data = DB::table('users')->where(['id_user'=>$request->facilitatorID])->delete();
+        return $data;
+    }
 }
+
+

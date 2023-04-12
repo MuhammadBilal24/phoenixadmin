@@ -42,6 +42,12 @@ Route::get('/mainappstudents', [homeController::class, 'mainappstudent']);
 Route::post('/add/appstudent',[homeController::class,'AddappStudent']);
 Route::post('/edit/appstudent',[homeController::class,'EditappStudent']);
 
+// Facilitator
+Route::get('/facilitator', [homeController::class, 'facilitator']);
+Route::post('/add/facilitator',[homeController::class,'Addfacilitator']);
+Route::post('/edit/facilitator',[homeController::class,'Editfacilitator']);
+Route::get('/facilitator/courses/{faciliatatorID}',[homeController::class,'facilitatorcourses']);
+
 
 //Courses
 Route::get('/courses', [homeController::class, 'course']);
@@ -52,12 +58,11 @@ Route::get('/courses/lectures/{courseID}',[homeController::class,'courselecture'
 
 
 
-Route::get('/facilitator', [homeController::class, 'facilitator']);
-
 Route::get('/admin', [homeController::class, 'admin']);
 
 
-
+// Notification
+Route::get('/notification', [homeController::class, 'notification']);
 
 
 
@@ -75,5 +80,8 @@ Route::get('/api/Coursedelete/{courseID}',[apiController::class,'coursedelete'])
 Route::get('/api/Studentget/{studentID}',[apiController::class,'studentget']);
 Route::get('/api/Studentdelete/{studentID}',[apiController::class,'studentdelete']);
 
+// facilitator
+Route::get('/api/facilitatorget/{facilitatorID}',[apiController::class,'facilitatorget']);
+Route::get('/api/facilitatordelete/{facilitatorID}',[apiController::class,'facilitatordelete']);
 
 // Route::get('/api/Studentget/{studentID}',[apiController::class,'mainappstudentget']);

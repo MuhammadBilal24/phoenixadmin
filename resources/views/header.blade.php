@@ -132,7 +132,7 @@
             </li>
             <li class="dropdown">
                 <a href="#" class="menu-toggle nav-link has-dropdown" style="color: black"><i
-                    data-feather="users" style="color: #800000;"></i><span style="color: black">Accounts</span></a>
+                    data-feather="user" style="color: #800000;"></i><span style="color: black">Accounts</span></a>
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="/facilitator">Facilitators</a></li>
                   <li><a class="nav-link" href="/admin">Admins</a></li>
@@ -151,7 +151,7 @@
                 <a href="/courses" class="nav-link"><i data-feather="book-open" style="color: #800000;"></i><span style="color: black">Courses</span></a>
               </li>
               <li>
-                <a href="index.html" class="nav-link"><i data-feather="list" style="color: #800000;"></i><span style="color: black">Push Notifications</span></a>
+                <a href="/notification" class="nav-link"><i data-feather="list" style="color: #800000;"></i><span style="color: black">Push Notifications</span></a>
               </li>
               <li>
                 <a href="index.html" class="nav-link"><i data-feather="slack" style="color: #800000;"></i><span style="color: black">Communities</span></a>
