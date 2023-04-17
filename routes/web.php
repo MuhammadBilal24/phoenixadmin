@@ -85,3 +85,5 @@ Route::get('/api/facilitatorget/{facilitatorID}',[apiController::class,'facilita
 Route::get('/api/facilitatordelete/{facilitatorID}',[apiController::class,'facilitatordelete']);
 
 // Route::get('/api/Studentget/{studentID}',[apiController::class,'mainappstudentget']);
+
+Route::post('/apia/login', [apiController::class,'loginUser']);
